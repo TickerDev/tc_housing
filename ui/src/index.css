@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.625rem;
+
+  /* Light theme palette approximating the original OKLCH neutrals */
+  --background: #f9fafb;           /* very soft off‑white */
+  --foreground: #111827;           /* near-black neutral */
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #111827;
+  --primary-foreground: #f9fafb;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #111827;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #111827;
+  --destructive: #ef4343;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #9ca3af;
+
+  /* Simple chart colors */
+  --chart-1: #4f46e5;
+  --chart-2: #22c55e;
+  --chart-3: #06b6d4;
+  --chart-4: #f97316;
+  --chart-5: #eab308;
+
+  /* Sidebar-specific colors (light) */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #111827;
+  --sidebar-primary-foreground: #f9fafb;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #9ca3af;
+}
+
+.dark {
+  /* Dark theme palette approximating original OKLCH dark neutrals */
+  --background: #020617;           /* almost black slate */
+  --foreground: #e5e7eb;
+  --card: #020617;
+  --card-foreground: #e5e7eb;
+  --popover: #020617;
+  --popover-foreground: #e5e7eb;
+  --primary: #e5e7eb;
+  --primary-foreground: #020617;
+  --secondary: #111827;
+  --secondary-foreground: #e5e7eb;
+  --muted: #111827;
+  --muted-foreground: #9ca3af;
+  --accent: #111827;
+  --accent-foreground: #e5e7eb;
+  --destructive: #f97373;
+  --border: rgba(255, 255, 255, 0.09);
+  --input: rgba(255, 255, 255, 0.16);
+  --ring: #4b5563;
+
+  --chart-1: #38bdf8;
+  --chart-2: #22c55e;
+  --chart-3: #eab308;
+  --chart-4: #a855f7;
+  --chart-5: #f97316;
+
+  /* Sidebar-specific colors (dark) */
+  --sidebar: #020617;
+  --sidebar-foreground: #e5e7eb;
+  --sidebar-primary: #1447e6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1447e6;
+  --sidebar-accent-foreground: #c8c9cc;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #4b5563;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    /* For FiveM NUI we want to see the game behind everything except the sidebar. */
+    @apply bg-transparent text-foreground;
+  }
+}
+
+/* Smooth slide-in animation for the housing sidebar */
+@keyframes sidebar-slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sidebar-animate-in {
+  animation: sidebar-slide-in-right 0.30s ease-out;
+}
+
+/* Housing sidebar sizing tweaks */
+.housing-sidebar {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.housing-sidebar input,
+.housing-sidebar select,
+.housing-sidebar button,
+.housing-sidebar textarea,
+.housing-sidebar label {
+  font-size: 1rem;
+}
+
+.housing-sidebar .text-xs {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.housing-sidebar .text-sm {
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.housing-sidebar .text-\[11px\] {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.housing-sidebar .text-\[10px\] {
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.housing-sidebar .text-\[12px\] {
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.housing-sidebar .text-\[13px\] {
+  font-size: 1.02rem;
+  line-height: 1.45;
+}

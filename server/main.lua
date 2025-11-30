@@ -1,0 +1,5 @@
+CreateThread(function()
+    Wait(1000)
+    LoadPropertiesCache()
+    broadcastApartmentMarkers()
+end)

@@ -1,0 +1,5 @@
+CreateThread(function()
+    Wait(1500)
+    TriggerServerEvent('tc_housing:server:requestApartmentPoints')
+    TriggerEvent('tc_housing:client:resetMloTargets')
+end)
